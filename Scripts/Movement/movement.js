@@ -1,0 +1,2 @@
+import {tryJump} from './jumping.js';import {updateVertical} from './gravity.js';
+export function movePlayer(player,axis,jumping,dt,limitX){const speed=235;player.x=Math.min(limitX,Math.max(40,player.x+axis.x*speed*dt));player.y=Math.min(458,Math.max(325,player.y+axis.y*speed*.66*dt));if(Math.abs(axis.x)>.01)player.facing=Math.sign(axis.x);player.walking=Math.abs(axis.x)+Math.abs(axis.y)>.01;tryJump(player,jumping);updateVertical(player,dt);}

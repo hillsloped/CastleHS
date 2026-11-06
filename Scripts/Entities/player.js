@@ -1,0 +1,2 @@
+export function makePlayer(){return {x:135,y:415,height:0,vz:0,facing:1,walking:false,jumpHeld:false,hp:100,maxHp:100,iframes:0,attackTimer:0,attackCooldown:0,attackKind:'fists',equipped:'fists',potions:3,healEffect:0,step:0,knock:0};}
+export function hurtPlayer(player,damage,fromX){if(player.iframes>0)return false;player.hp=Math.max(0,player.hp-damage);player.iframes=.75;player.x+=player.x<fromX?-23:23;return true;}

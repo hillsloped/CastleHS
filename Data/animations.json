@@ -1,0 +1,1 @@
+{"note":"Procedural pose animation for geometric placeholders; implementation lives in Scripts/Animation.","states":["idle","walk","jump","attack","healing"]}

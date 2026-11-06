@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#151b2b" />
+  <title>CastleHS — Prototype</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="app">
+    <header class="topbar"><div class="brand">CASTLE<span>HS</span><small>PROTOTYPE 0.1</small></div><div class="top-note">A Hillsloped project · Original placeholder art</div></header>
+    <section id="title-screen" class="screen visible" aria-label="Title screen">
+      <div class="hero-art" aria-hidden="true"><div class="castle"><i></i><i></i><i></i></div><div class="hero-knight"><div class="hero-head"></div><div class="hero-body"></div><div class="hero-sword"></div></div></div>
+      <div class="title-content"><div class="eyebrow">AN EARLY PLAYABLE TEST</div><h1>CASTLE<span>HS</span></h1><p>A little kingdom. A lot of trouble.</p><button id="play-button" class="big-button">ENTER WORLD MAP <span>➜</span></button><p class="muted">Built for your browser · No original game files needed</p></div>
+    </section>
+    <section id="map-screen" class="screen" aria-label="World map">
+      <div class="map-head"><button id="map-back" class="text-button">← TITLE</button><div><div class="eyebrow">CHOOSE YOUR PATH</div><h2>WORLD MAP</h2></div><div class="map-label">2 playable stages</div></div>
+      <div class="world-map"><div class="map-path"></div><button class="level-pin simple" data-level="simple"><span class="map-pin-icon">♜</span><strong>1. THE FIRST ROAD</strong><small>Short stage · Clear the enemies</small><span class="pin-cta">PLAY LEVEL →</span></button><button class="level-pin endless" data-level="endless"><span class="map-pin-icon">∞</span><strong>2. ENDLESS DESCENT</strong><small>Keep going · Survive as long as you can</small><span class="pin-cta">ENTER ENDLESS →</span></button><div class="map-hills" aria-hidden="true"></div></div>
+      <p class="map-foot">Both levels are available from the beginning.</p>
+    </section>
+    <section id="game-screen" class="screen" aria-label="Game level">
+      <div class="game-shell"><canvas id="game" width="960" height="540" aria-label="CastleHS game arena"></canvas>
+        <div id="hud" class="hud"><div class="hud-left"><strong id="stage-name">THE FIRST ROAD</strong><div class="health-rail"><div id="health-fill"></div></div><small id="health-text">100 / 100 HP</small></div><div class="hud-center" id="level-progress"></div><button id="exit-level" class="hud-exit">WORLD MAP ✕</button></div>
+        <div class="bottom-hud"><div class="hotbar" aria-label="Equipment"><button class="slot active" data-equip="fists"><b>1</b><span class="item-pict">✊</span><small>FISTS</small></button><button class="slot" data-equip="sword"><b>2</b><span class="item-pict">⚔</span><small>SWORD</small></button><button class="slot" data-equip="potion"><b>3</b><span class="item-pict">✚</span><small>POTION <span id="potion-count">×3</span></small></button></div><div class="control-hint">WASD / ARROWS move · SPACE jump · J / CLICK use · 1–3 equip</div></div>
+        <div id="game-overlay" class="game-overlay hidden"><div class="overlay-card"><div class="eyebrow" id="overlay-kicker">LEVEL COMPLETE</div><h2 id="overlay-title">VICTORY!</h2><p id="overlay-message">You cleared the road.</p><div class="overlay-actions"><button id="retry-button" class="big-button">TRY AGAIN ↻</button><button id="map-button" class="outline-button">WORLD MAP</button></div></div></div>
+        <div id="touch-controls" class="touch-controls"><div class="touch-pad"><button data-touch="left" aria-label="Move left">◀</button><div><button data-touch="up" aria-label="Move up">▲</button><button data-touch="down" aria-label="Move down">▼</button></div><button data-touch="right" aria-label="Move right">▶</button></div><div class="touch-actions"><button data-touch="jump">JUMP</button><button data-touch="attack">USE</button></div></div>
+      </div>
+    </section>
+    <footer>CASTLEHS · Unofficial independent prototype · All graphics in this build are original geometric placeholders</footer>
+  </main>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

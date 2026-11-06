@@ -1,0 +1,2 @@
+export function usePotion(player){if(player.equipped!=='potion'||player.potions<=0||player.hp===player.maxHp||player.hp<=0||player.attackCooldown>0)return false;player.potions--;player.hp=Math.min(player.maxHp,player.hp+40);player.healEffect=.7;player.attackCooldown=.55;return true;}
+export function tickCombat(player,dt){player.attackCooldown=Math.max(0,player.attackCooldown-dt);player.attackTimer=Math.max(0,player.attackTimer-dt);player.iframes=Math.max(0,player.iframes-dt);player.healEffect=Math.max(0,player.healEffect-dt);}

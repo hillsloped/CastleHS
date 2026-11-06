@@ -1,0 +1,2 @@
+import {attackHits} from './hitboxes.js';import {knockEnemy} from './knockback.js';
+export function attack(player,enemies){if(player.attackCooldown>0||player.hp<=0)return false;if(player.equipped==='potion')return false;const sword=player.equipped==='sword';player.attackKind=player.equipped;player.attackTimer=sword?.24:.19;player.attackCooldown=sword?.46:.32;let hits=0;for(const e of enemies){if(e.hp>0&&attackHits(player,e,sword?103:65)){e.hp-=sword?30:18;e.hitFlash=.12;knockEnemy(e,player.facing,sword?195:130);hits++;}}return hits>=0;}
